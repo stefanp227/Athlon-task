@@ -1,6 +1,6 @@
 class Deck
   def initialize
-    @deck = Card::RANKS.map do |rank|
+    @cards = Card::RANKS.map do |rank|
       Card::SUITS.map do |suit|
         Card.new(rank, suit)
       end
@@ -8,14 +8,14 @@ class Deck
   end
 
   def count
-    @deck.size
+    @cards.size
   end
 
   def shuffle!
-    @deck.shuffle!
+    @cards.shuffle!
   end
 
   def draw(n)
-    @deck.pop(n)
+    @cards.pop(n)
   end
 end
